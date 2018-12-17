@@ -20,7 +20,7 @@ public class Aufgabe1a
 			StdOut.print("Wie viele Zeilen soll das Dreieck haben? ");
 			int anzahl = StdIn.readInt();
 			
-			for(int i=0; i<=anzahl; i++){
+			for(int i=1; i<=anzahl; i++){
 				wiederholeZeichen(' ', anzahl-i);
 				wiederholeZeichen('*', i*2-1);
 				StdOut.println("");

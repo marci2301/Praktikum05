@@ -1,20 +1,26 @@
 
 public class Aufgabe2a {
 	
+	public static int frageInt(String frage) {
+		StdOut.println(frage);
+		int i = StdIn.readInt();
+		return i;
+	}
+	
 	public static int frageInt(String frage, int min, int max){
 		
 		StdOut.println(frage);
-		int x = 0;
+		int i = 0;
 		
 			do{
 				
-				x = StdIn.readInt();
+				i = StdIn.readInt();
 			
-				if(x>max||x<min)
+				if(i>max||i<min)
 				StdOut.print("Ausserhalb der Min- oder Maxwerte! Nochmal: ");
-			}while(x>max||x<min);
+			}while(i>max||i<min);
 		
-		return x;
+		return i;
 	}
 	
 	public static int[] frageInt(String frage, int anzahl){
@@ -50,7 +56,7 @@ public class Aufgabe2a {
 		return max;
 	}
 	
-	public static int maximum2int(int a, int b)
+	public static int max2int(int a, int b)
 	{
 		if (a > b)
 	       {
@@ -66,33 +72,30 @@ public class Aufgabe2a {
 	{
 		int max = 0;
 		
-		for(int i=0; i<array.length; i++)
-		{
-			if(max<array[i]){
-				max = array[i];
-			}
+		for(int i=0; i<array.length-1; i++) {
+			max = max2int(array[i], array[i+1]);
 		}
+		
 		return max;
 	}
 	
 	public static int [] arrayTausch (int[] array)
-	{	
-		int [] array2;
-		array2 = new int [array.length];
+	{			
+		int [] array2 = new int [array.length];
 		int count = array.length-1;
 		
 		for(int i=0; i<array.length; i++)
 		{
-			array2[count] = array[i];
+			array2[i] = array[count];
 			count--;
 		}
 		return array2;
 	}
 	
-	public static int [] frageArray(String frage, int gr)
+	public static int [] frageArray(String frage)
 	{
 		StdOut.print(frage);
-		gr = StdIn.readInt();
+		int gr = StdIn.readInt();
 		
 		int [] array = new int [gr];
 		for(int i=0; i<array.length; i++)
@@ -101,16 +104,35 @@ public class Aufgabe2a {
 			array[i] = StdIn.readInt();
 		}
 		return array;
-}
+	}
+	
+	public static void arrayAusgabe(int[] array) {
+		for(int i=0; i<array.length; i++) {
+			StdOut.print(array[i] + " ");
+		}
+		StdOut.println("");
+	}
 
 	public static void main(String[] args) {
-		
-//		int min = 0;
-//		int max = 100;
-//		int wert = frageInt("Geben Sie einen Wert ein: ", min, max);
 
+//		int anzahl = frageInt("Geben Sie die Anzahl der Reihen ein: ");
+//		
+//		for(int i=1; i<=anzahl; i++){
+//			Aufgabe1a.wiederholeZeichen(' ', anzahl-i);
+//			Aufgabe1a.wiederholeZeichen('*', i*2-1);
+//			StdOut.println("");
+//		}
 		
-//		int anzahl = frageInt("Geben Sie die Anzahl der Zeilen ein: ")
+//		int [] array = frageArray("Wie gross soll das Array sein?");
+//		StdOut.println(maxArray(array));
+		
+		int [] array = frageArray("Wie gross soll das Array sein?");
+		int [] array2 = arrayTausch(array);
+		
+		arrayAusgabe(array);
+		arrayAusgabe(array2);
+		
+		
 		
 		
 	}
