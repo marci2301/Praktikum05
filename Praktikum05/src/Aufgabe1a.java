@@ -1,6 +1,6 @@
 public class Aufgabe1a
 {
-	
+	//Static da die Methode nicht an einem Objekt aufgerufen werden soll
 	public static void wiederholeZeichen(char zeichen, int anzahl)
 	{
 		for(int i=0; i<anzahl; i++)

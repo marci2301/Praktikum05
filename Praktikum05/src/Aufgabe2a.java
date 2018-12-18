@@ -1,12 +1,14 @@
 
 public class Aufgabe2a {
 	
+	//Static - Methode wird nicht an einem Objekt aufgerufen, Übergabeparameter String, Rückgabeparameter int
 	public static int frageInt(String frage) {
 		StdOut.println(frage);
 		int i = StdIn.readInt();
 		return i;
 	}
 	
+	//Static - Methode wird nicht an einem Objekt aufgerufen, Übergabeparameter String int int, Rückgabeparameter int
 	public static int frageInt(String frage, int min, int max){
 		
 		StdOut.println(frage);
@@ -23,17 +25,21 @@ public class Aufgabe2a {
 		return i;
 	}
 	
+	//Static - Methode wird nicht an einem Objekt aufgerufen, Übergabeparameter String int, Rückgabeparameter int[]
 	public static int[] frageInt(String frage, int anzahl){
 		StdOut.println(frage);
-		
+		 
+		//Initialiserung und Deklaration des Arrays
 		int[] iarray = new int[anzahl];
+		
+		//for-schleife um Werte in den Arrays zu speichern durch Benutzereingabwe
 		for(int i=0; i<anzahl; i++){
 			StdOut.println("Geben sie die " + (i+1) + ". Zahl ein: ");
 			int n = StdIn.readInt();
 			iarray[i] = n;			
 		}
 		
-		return iarray;
+		return iarray;     //return des Arrays
 	}
 	
 	public static int maximum(){
